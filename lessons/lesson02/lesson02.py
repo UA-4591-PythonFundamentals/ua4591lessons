@@ -299,3 +299,6 @@ text = "hello"
 print(f"{text.zfill(10) =}")
 a = True + True
 print(a)
+text = "01000101010001001010001010100010101000101010001"
+print(int(text, 2))
+print(int(text))
