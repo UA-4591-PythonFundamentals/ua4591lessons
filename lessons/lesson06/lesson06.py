@@ -1,4 +1,6 @@
+
 print("Hello, World!")
+print("remout")
 print("This is lesson 06.")
 a = 15
 b = 30
