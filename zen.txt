@@ -4,7 +4,7 @@
 4. Ivan K
 5. Serhii Nechytailo
 6. Sparse is better than dense.
-7. vova
+7. Readability counts.
 8. Anna Sverydova
 9. Filip Ishchenko
 10. Gennady Molodetsky
