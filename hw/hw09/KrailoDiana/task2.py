@@ -43,6 +43,10 @@ while run:
     if keys[pygame.K_DOWN]:
         COORD_Y = COORD_Y+DELTA_STEP
 
+    # 
+    # hw part here |
+    #              V
+
     if COORD_X < 0:
         COORD_X = 0
     if COORD_X + WIDTH_RECTANGLE > WIDTH_DISPLAY:
