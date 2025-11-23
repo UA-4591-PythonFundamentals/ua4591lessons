@@ -18,7 +18,7 @@
 18. Oleksii Zhelaha
 19. Pospishnyi\_Dmitryi
 20. Beautiful is better than ugly.(new)
-21. Viacheslav Alekseiev
+21. Explicit is better than implicit.
 22. Viktoriia Palchevska
 23. Complex is better than complicated.
 24. Kat
