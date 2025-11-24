@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Список Користувачів та Дії</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        table { width: 80%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #f2f2f2; color: #333; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        .action-btn { 
+            text-decoration: none; 
+            padding: 5px 10px; 
+            margin-right: 5px;
+            border-radius: 3px;
+            display: inline-block;
+            font-size: 14px;
+        }
+        .create-btn { 
+            background-color: #4CAF50; 
+            color: white; 
+            padding: 10px 15px; 
+            margin-bottom: 20px; 
+        }
+        .view-btn { background-color: #2196F3; color: white; }
+        .delete-btn { background-color: #f44336; color: white; }
+        .delete-form { display: inline; }
+    </style>
+</head>
+<body>
+
+    <h1>👥 Управління Користувачами</h1>
+
+    <a href="/create_user" class="action-btn create-btn">➕ Створити Нового Користувача</a>
+
+    {% if users %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Ім'я</th>
+                    <th>Email</th>
+                    <th>Вік</th>
+                    <th>Дії</th> </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>**{{ user.name }}**</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.age }}</td>
+                    
+                    <td>
+                        <a href="/users/{{ user.email }}" class="action-btn view-btn">Переглянути детально</a>
+                        
+                        <form action="/users/{{ user.email }}/delete" method="POST" class="delete-form">
+                            <button type="submit" class="action-btn delete-btn" onclick="return confirm('Ви впевнені, що хочете видалити користувача {{ user.name }}?')">
+                                Видалити
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+        <p>Усього користувачів: **{{ users | length }}**</p>
+        
+    {% else %}
+        <p style="color: red;">⚠️ Список користувачів порожній. <a href="/create_user">Створіть першого користувача</a>.</p>
+    {% endif %}
+
+</body>
+</html>
