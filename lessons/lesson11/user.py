@@ -23,5 +23,3 @@ class User:
             raise UserError("Age must be between 0 and 120.")
         logging.debug(f"User validated: {self.username}, Age: {self.age}")
         return True
-
-
